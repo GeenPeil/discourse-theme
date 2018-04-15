@@ -8,6 +8,6 @@ body input, body button, body select, body textarea {
 }
 
 // "Disable" this
-.pref-bio, .pref-location, .pref-website {
+.pref-second-factor .pref-bio, .pref-location, .pref-website {
   display: none;
 }
