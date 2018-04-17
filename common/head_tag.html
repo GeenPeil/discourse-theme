@@ -1,1 +1,16 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+<script type="text/discourse-plugin" version="0.2">
+    // Track page views 
+    api.onPageChange((url, title) => {
+        if (_paq) {
+            try {
+                var currentUser = PreloadStore.get('currentUser');
+                _paq.push(['setCustomVariable', 3, 'Forum status', !currentUser ? 'Anonymous' : 'LoggedIn user', 'visit']);
+            } catch(e) {} 
+              
+            _paq.push(["setCustomUrl", url]);
+            _paq.push(["setDocumentTitle", title]);
+            _paq.push(["trackPageView"]);
+        }
+    });
+</script>
